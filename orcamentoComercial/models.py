@@ -10,7 +10,6 @@ class OrcamentoComercial(models.Model):
     PROFISSIONAL_CHOICES = [
         ('desenvolvedor', 'Desenvolvedor'),
         ('analista_dados', 'Analista de Dados'),
-        # Adicione outras opções conforme necessário
     ]
 
     SENIORIDADE_CHOICES = [
