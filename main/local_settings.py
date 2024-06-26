@@ -73,12 +73,14 @@ WSGI_APPLICATION = "main.wsgi.application"
 CORS_ALLOW_CREDENTIALS = True 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000', 
-    'http://localhost:8080',  
+    'http://localhost:8080',
+    'https://orcamento-comercial-production.up.railway.app'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',  
     'http://localhost:8080',  
+    'https://orcamento-comercial-production.up.railway.app'
 ]
 
 CSRF_COOKIE_SAMESITE = 'Lax'
