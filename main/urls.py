@@ -1,7 +1,9 @@
+# meu_projeto/urls.py
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('orcamentoComercial/', include('orcamentoComercial.urls')),
+    path('api/', include('orcamentoComercial.urls')), 
 ]
