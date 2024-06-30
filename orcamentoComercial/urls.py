@@ -1,19 +1,16 @@
-# meu_projeto/orcamentoComercial/urls.py
+# orcamentoComercial/urls.py
+
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import OrcamentoComercialViewSet
-from .views import login
-from .views import get_csrf_token
-
-
-
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from .views import OrcamentoComercialViewSet, UserDetailView
 
 router = DefaultRouter()
 router.register(r'orcamento', OrcamentoComercialViewSet)  
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('login/', login, name='login'),
-    path('csrf/', get_csrf_token, name='csrf_token'),
-
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('me/', UserDetailView.as_view(), name='user_detail'),
 ]
