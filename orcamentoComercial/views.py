@@ -14,23 +14,16 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.middleware.csrf import get_token
 from django.http import JsonResponse
-
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
-
+from django.contrib.auth.models import User
+from .serializers import UserSerializer
 
 class OrcamentoComercialViewSet(viewsets.ModelViewSet):
     queryset = OrcamentoComercial.objects.all()
     serializer_class = OrcamentoComercialSerializer
-
-
-# views.py
-
-
-from django.contrib.auth.models import User
-from .serializers import UserSerializer
 
 class UserDetailView(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAuthenticated]

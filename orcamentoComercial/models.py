@@ -28,11 +28,11 @@ class OrcamentoComercial(models.Model):
         ('90_dias', '90 dias'),
     ]
 
-    area = models.CharField(max_length=50, choices=AREA_CHOICES)
-    profissional = models.CharField(max_length=50, choices=PROFISSIONAL_CHOICES)
-    senioridade = models.CharField(max_length=50, choices=SENIORIDADE_CHOICES)
-    forma_pagamento = models.CharField(max_length=50, choices=FORMA_PAGAMENTO_CHOICES)
-    margem = models.DecimalField(max_digits=5, decimal_places=2, default=20.00)
+    area = models.CharField(max_length=40, choices=AREA_CHOICES)
+    profissional = models.CharField(max_length=40, choices=PROFISSIONAL_CHOICES)
+    senioridade = models.CharField(max_length=40, choices=SENIORIDADE_CHOICES)
+    forma_pagamento = models.CharField(max_length=40, choices=FORMA_PAGAMENTO_CHOICES)
+    margem = models.DecimalField(max_digits=5, decimal_places=2, default=10.00)
 
     def __str__(self):
         return f"{self.area} - {self.profissional} - {self.senioridade}"
