@@ -37,7 +37,7 @@ class OrcamentoComercial(models.Model):
     ]
 
     area = models.CharField(max_length=40, choices=AREA_CHOICES)
-    cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
+    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
     forma_pagamento = models.CharField(max_length=40, choices=FORMA_PAGAMENTO_CHOICES)
     margem = models.DecimalField(max_digits=5, decimal_places=2, default=10.00)
 

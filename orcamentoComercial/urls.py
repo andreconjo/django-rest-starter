@@ -3,10 +3,11 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from .views import OrcamentoComercialViewSet, UserDetailView
+from .views import OrcamentoComercialViewSet, UserDetailView, CargoViewSet
 
 router = DefaultRouter()
 router.register(r'orcamento', OrcamentoComercialViewSet)  
+router.register(r'cargos', CargoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

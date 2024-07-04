@@ -1,6 +1,6 @@
 from rest_framework import viewsets  
-from .models import OrcamentoComercial  
-from .serializers import OrcamentoComercialSerializer 
+from .models import OrcamentoComercial, Cargo  
+from .serializers import OrcamentoComercialSerializer, CargoSerializer
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -24,6 +24,10 @@ from .serializers import UserSerializer
 class OrcamentoComercialViewSet(viewsets.ModelViewSet):
     queryset = OrcamentoComercial.objects.all()
     serializer_class = OrcamentoComercialSerializer
+
+class CargoViewSet(viewsets.ModelViewSet):
+    queryset = Cargo.objects.all()
+    serializer_class = CargoSerializer
 
 class UserDetailView(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAuthenticated]
