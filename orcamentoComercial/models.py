@@ -21,7 +21,7 @@ class Senioridade(models.Model):
 class Cargo(models.Model):
     nome = models.CharField(max_length=40)
     senioridade = models.ForeignKey(Senioridade, on_delete=models.CASCADE)
-    salario = models.CharField(max_length=40)
+    salario = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return f"{self.nome}"
