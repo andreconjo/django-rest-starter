@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .forms import OrcamentoComercialForm
-from .models import OrcamentoComercial, Cargo
+from .models import OrcamentoComercial, Cargo, Senioridade, Pagamento, Area
 
 @admin.register(OrcamentoComercial)
 class OrcamentoComercialAdmin(admin.ModelAdmin):
@@ -13,4 +13,18 @@ class OrcamentoComercialAdmin(admin.ModelAdmin):
 @admin.register(Cargo)
 class CargoAdmin(admin.ModelAdmin):
     list_display = ('nome', 'senioridade','salario')
+
+
+@admin.register(Senioridade)
+class SenioridadeAdmin(admin.ModelAdmin):
+    list_display = ('nome',)
+
+@admin.register(Pagamento)
+class PagamentoAdmin(admin.ModelAdmin):
+    list_display = ('nome',)
+
+@admin.register(Area)
+class AreaAdmin(admin.ModelAdmin):
+    list_display = ('nome',)
+
 

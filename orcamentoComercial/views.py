@@ -1,6 +1,6 @@
 from rest_framework import viewsets  
-from .models import OrcamentoComercial, Cargo  
-from .serializers import OrcamentoComercialSerializer, CargoSerializer
+from .models import OrcamentoComercial, Cargo, Senioridade, Pagamento, Area
+from .serializers import OrcamentoComercialSerializer, CargoSerializer, PagamentoSerializer, UserSerializer, AreaSerializer, SenioridadeSerializer
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -19,7 +19,6 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
-from .serializers import UserSerializer
 
 class OrcamentoComercialViewSet(viewsets.ModelViewSet):
     queryset = OrcamentoComercial.objects.all()
@@ -28,6 +27,19 @@ class OrcamentoComercialViewSet(viewsets.ModelViewSet):
 class CargoViewSet(viewsets.ModelViewSet):
     queryset = Cargo.objects.all()
     serializer_class = CargoSerializer
+
+class SenioridadeViewSet(viewsets.ModelViewSet):
+    queryset = Senioridade.objects.all()
+    serializer_class = SenioridadeSerializer
+
+class PagamentoViewSet(viewsets.ModelViewSet):
+    queryset = Pagamento.objects.all()
+    serializer_class = PagamentoSerializer
+
+class AreaViewSet(viewsets.ModelViewSet):
+    queryset = Area.objects.all()
+    serializer_class = AreaSerializer
+
 
 class UserDetailView(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAuthenticated]
