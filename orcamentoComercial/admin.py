@@ -5,7 +5,7 @@ from .models import OrcamentoComercial, Cargo, Senioridade, Pagamento, Area
 @admin.register(OrcamentoComercial)
 class OrcamentoComercialAdmin(admin.ModelAdmin):
     form = OrcamentoComercialForm
-    list_display = ('area', 'cargo','forma_pagamento', 'margem')
+    list_display = ('area', 'cargo','forma_pagamento', 'margem', 'valor_calculado')
     list_filter = ('area', 'cargo','forma_pagamento')
     search_fields = ('area', 'cargo','forma_pagamento')
 

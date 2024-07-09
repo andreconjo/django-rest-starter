@@ -32,6 +32,7 @@ class OrcamentoComercial(models.Model):
     cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
     forma_pagamento = models.ForeignKey(Pagamento, on_delete=models.CASCADE)
     margem = models.DecimalField(max_digits=5, decimal_places=2, default=10.00)
+    valor_calculado = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
     def __str__(self):
         return f"{self.area} - {self.cargo} - {self.cargo.nome}"
